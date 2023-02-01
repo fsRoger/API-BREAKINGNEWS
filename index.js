@@ -1,11 +1,14 @@
 //const { json } = require("express");
 //app.use(json);
-const express = require("express");
-const userRoute = require("./src/routes/user.route")
 
+const express = require("express");
+const userRoute = require("./src/routes/user.route");
 const app = express();
 
-app.use("/soma", userRoute);
+const port = 3000;
+
+app.use(express.json());
+app.use("/user", userRoute);
 
 //ROTA
 //Method HTTP - CRUD (CREATE,READ,UPDATE,DELETE)
@@ -27,5 +30,5 @@ app.use("/soma", userRoute);
 //res.json(soma)
 // res.send({soma: soma})
 //});
-
-app.listen(3000);
+//arrow function in line nao precisa de chaves
+app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
