@@ -3,16 +3,11 @@ const mongoose = require('mongoose');
 const connetcDatabase = () => {
     console.log("wait connecting to the database");
 
-    mongoose.set('strictQuery', false)
     mongoose.connect(
-        URL='mongodb+srv://root:root@cluster0.adwel57.mongodb.net/?retryWrites=true&w=majority',
-        { useNewUrlParser: true}
+        'mongodb+srv://root:root@cluster0.adwel57.mongodb.net/?retryWrites=true&w=majority',
+        { useNewUrlParser: true, useUnifieldTopology: true, useFindAndModify:false }
     )
-    const db = mongoose.connection;
-    db.on("error", console.error.bind(console, "connection error:"));
-    db.once("open", function() {
-        console.log("we're connected!");
-    });
+    .then(() => console.log("mongo db atlas connected")).catch((error) => console.log(error));
 };
 
 module.exports = connetcDatabase;

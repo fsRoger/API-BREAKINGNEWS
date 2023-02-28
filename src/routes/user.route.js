@@ -11,3 +11,4 @@ route.get("/user/:id", userController.findById);
 route.patch("/user/:id", userController.update)
 
 module.exports = route;
+module.exports = route;
