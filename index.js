@@ -11,7 +11,7 @@ const port = 3000;
 
 connetcDatabase()
 app.use(express.json());
-app.use("/user", userRoute);
+app.use(userRoute);
 
 //ROTA
 //Method HTTP - CRUD (CREATE,READ,UPDATE,DELETE)
