@@ -3,16 +3,19 @@
 
 const express = require("express");
 const userRoute = require("./src/routes/user.route");
+const testesRoute = require("./src/routes/testes.route");
+var cors = require('cors');
 const app = express();
+app.use(cors());
 
-const connetcDatabase = require("./src/database/db")
+const connetcDatabase = require("./src/database/db");
 
 const port = 3000;
 
-connetcDatabase()
+connetcDatabase();
 app.use(express.json());
-app.userRoute;
-
+app.use(userRoute);
+app.use(testesRoute);
 //ROTA
 //Method HTTP - CRUD (CREATE,READ,UPDATE,DELETE)
 //GET - Pega uma info
