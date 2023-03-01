@@ -16,7 +16,7 @@ const create = async (req, res) => {
     res.status(201).send({
         message: "user name created sucessfully",
         user: {
-            // id: user_id,
+            id: user_id,
             name,
             username,
             email,
@@ -64,7 +64,6 @@ const update = async (req, res)=> {
 
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(400).send({message: "Invalid ID"});
-
     }
 
     const user = await userService.findByIdService(id);
