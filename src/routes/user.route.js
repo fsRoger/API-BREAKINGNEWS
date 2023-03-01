@@ -6,5 +6,8 @@ route.get("/start", ()=>{
 })
 
 route.post("/user/add", userController.create);
+route.get("/user/add", userController.findAll);
+route.get("/user/:id", userController.findById);
+route.patch("/user/:id", userController.update)
 
 module.exports = route;
