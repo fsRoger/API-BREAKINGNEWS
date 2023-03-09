@@ -1,6 +1,7 @@
 {
   "name": "api-breakingnews",
   "version": "1.0.0",
+  "type": "module",
   "description": "API for SPA Breaking News",
   "main": "index.js",
   "scripts": {
@@ -11,6 +12,7 @@
   "author": "Thi Code",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",

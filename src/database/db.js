@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 mongoose.set("strictQuery", true);
-
-require("dotenv").config({ path: ".env" });
+//require("dotenv").config({ path: ".env" });
 
 const connetcDatabase = () => {
     console.log("wait connecting to the database");
+
     mongoose.connect(process.env.DB_URI, { useNewUrlParser: true });
 
     const db = mongoose.connection;
@@ -14,4 +14,4 @@ const connetcDatabase = () => {
     });
 };
 
-module.exports = connetcDatabase;
+export default connetcDatabase;
